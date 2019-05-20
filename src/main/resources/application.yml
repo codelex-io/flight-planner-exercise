@@ -1,0 +1,5 @@
+flight-planner-app:
+  api-url: http://localhost:8080
+  admin:
+    username: codelex-admin
+    password: Password123
