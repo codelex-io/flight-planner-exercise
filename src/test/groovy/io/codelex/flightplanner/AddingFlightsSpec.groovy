@@ -41,6 +41,22 @@ class AddingFlightsSpec extends BaseSpecification {
             flight.arrivalTime.isEqual(req.arrivalTime)
     }
 
+    def 'PUT on /admin-api/flights should return different id for new flight'() {
+        given:
+            def req = new AddFlightRequest(
+                    from: RIX,
+                    to: ARN,
+                    carrier: RYANAIR,
+                    departureTime: baseDateTime,
+                    arrivalTime: baseDateTime.plusDays(1)
+            )
+        when:
+            def firstFlight = adminFlightApi.addFlight(req).body
+            def secondFlight = adminFlightApi.addFlight(req.tap { it.from = DME }).body
+        then:
+            firstFlight.id != secondFlight.id
+    }
+
     def 'PUT on /admin-api/flights should return 409 when adding duplicated flight'() {
         given:
             def req = new AddFlightRequest(
