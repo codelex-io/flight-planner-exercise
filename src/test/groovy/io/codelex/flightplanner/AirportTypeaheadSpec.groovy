@@ -7,7 +7,7 @@ import spock.lang.Unroll
 import java.time.LocalDate
 
 import static io.codelex.flightplanner.fixture.AirportFixture.*
-import static io.codelex.flightplanner.fixture.CarrierFixture.getRYANAIR
+import static io.codelex.flightplanner.fixture.CarrierFixture.RYANAIR
 import static org.springframework.http.HttpStatus.OK
 
 class AirportTypeaheadSpec extends BaseSpecification {

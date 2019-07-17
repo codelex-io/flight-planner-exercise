@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Component
 import org.springframework.web.util.UriComponentsBuilder
 
-import static io.codelex.flightplanner.model.Airport.getLIST_TYPE
+import static io.codelex.flightplanner.model.Airport.LIST_TYPE
 import static org.springframework.http.HttpEntity.EMPTY
 import static org.springframework.http.HttpMethod.GET
 
